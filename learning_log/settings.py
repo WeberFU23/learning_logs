@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         default=os.environ.get('DATABASE_URL'), # 从环境变量获取数据库连接
-        conn_max_age=600 # 可选：设置连接的最大存活时间
+        conn_max_age=600 )# 可选：设置连接的最大存活时间
 }
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
