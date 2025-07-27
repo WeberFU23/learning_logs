@@ -25,9 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9$7-8$_f=tlgne#h21lsear87f0!8w!99(*uvr!*25)ur35kzo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = false
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = [
+    'learning-logs-2f2u.onrender.com',  # <-- 添加你的 Render 域名
+    '127.0.0.1',  # 如果你在本地开发也用，可以保留
+    'localhost',  # 如果你在本地开发也用，可以保留
+]
 
 
 # Application definition
