@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-9$7-8$_f=tlgne#h21lsear87f0!8w!99(*uvr!*25)ur35kzo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 
 # Application definition
@@ -86,7 +86,7 @@ DATABASES = {
         default=os.environ.get('DATABASE_URL'), # 从环境变量获取数据库连接
         conn_max_age=600 # 可选：设置连接的最大存活时间
 }
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
